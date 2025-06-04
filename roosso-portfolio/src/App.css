@@ -1,0 +1,64 @@
+/* src/App.css */
+.cyber-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-border {
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+}
+
+.cyber-border-cyan {
+  color: rgba(0, 255, 255, 0.3);
+}
+
+.cyber-border-purple {
+  color: rgba(168, 85, 247, 0.3);
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.cyber-glow {
+  text-shadow: 0 0 0px currentColor, 0 0  0px currentColor, 0 0 0px currentColor;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00ffff, #a855f7);
+  border-radius: 2px;
+}
+
+.slow-bounce {
+  animation: bounce 3s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

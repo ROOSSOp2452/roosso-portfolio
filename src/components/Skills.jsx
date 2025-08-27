@@ -4,27 +4,27 @@ import { Code, Database, Brain, BarChart3, Globe, Settings, Award, TrendingUp } 
 const skillsData = {
   languages: [
     { name: 'Python', level: 90, icon: '🐍' },
-    { name: 'JavaScript', level: 85, icon: '🚀' },
-    { name: 'SQL', level: 88, icon: '🗃️' },
-    { name: 'C++', level: 70, icon: '🔧' },
+    { name: 'SQL', level: 75, icon: '🗄️' },
+    { name: 'JavaScript', level: 65, icon: '🟨' },
+    { name: 'C++', level: 55, icon: '💻' },
   ],
   web: [
-    { name: 'React.js', level: 85, icon: '⚛️' },
-    { name: 'Django', level: 88, icon: '🎸' },
-    { name: 'HTML/CSS', level: 90, icon: '🎨' },
-    { name: 'REST APIs', level: 82, icon: '🔗' },
+    { name: 'HTML/CSS', level: 80, icon: '🎨' },
+    { name: 'React.js', level: 70, icon: '⚛️' },
+    { name: 'Django', level: 75, icon: '🌐' },
+    { name: 'REST APIs', level: 65, icon: '🔗' },
   ],
   ml_ai: [
     { name: 'TensorFlow', level: 85, icon: '🧠' },
-    { name: 'Scikit-learn', level: 90, icon: '🤖' },
+    { name: 'Scikit-learn', level: 85, icon: '🤖' },
     { name: 'PyTorch', level: 80, icon: '🔥' },
     { name: 'NumPy/Pandas', level: 95, icon: '📊' },
   ],
   tools: [
     { name: 'Git & GitHub', level: 85, icon: '🛠️' },
-    { name: 'Docker', level: 70, icon: '🐳' },
     { name: 'VS Code', level: 90, icon: '💻' },
     { name: 'Power BI', level: 88, icon: '📈' },
+    { name: 'Docker', level: 70, icon: '🐳' }
   ],
 };
 

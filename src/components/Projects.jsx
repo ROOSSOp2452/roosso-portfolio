@@ -8,7 +8,7 @@ const projectsData = [
     category: "ml",
     technologies: ["Python", "LSTM", "TensorFlow"],
     github: "https://github.com/ROOSSOp2452/Stock_Market_anlaysis_using_LSTM",
-    imageUrl: "src/assets/images/stock_market.jpg"
+    imageUrl: "/images/stock_market.jpg"
   },
   {
     title: "Customer Churn Analysis",
@@ -16,7 +16,7 @@ const projectsData = [
     category: "ml",
     technologies: ["Python", "Scikit-learn", "Random Forest"],
     github: "https://github.com/ROOSSOp2452/CUSTOMER_CHURN_ANALYSIS",
-    imageUrl: "src/assets/images/customer_churn.jpg"
+    imageUrl: "/images/customer_churn.jpg"
   },
   {
     title: "SRS Blog - AI Content Generator",
@@ -24,7 +24,7 @@ const projectsData = [
     category: "web",
     technologies: ["Django", "ChatGPT API", "AI Integration"],
     github: "https://github.com/ROOSSOp2452/SRS-BLOG",
-    imageUrl: "src/assets/images/SRS.png"
+    imageUrl: "/images/SRS.png"
   },
   {
     title: "Power BI Sales Dashboard",
@@ -32,7 +32,7 @@ const projectsData = [
     category: "analytics",
     technologies: ["Power BI", "DAX", "Data Modeling"],
     github: "https://github.com/ROOSSOp2452/PowerBi_Dashboards",
-    imageUrl: "src/assets/images/powerbi_dashboard.png"
+    imageUrl: "/images/powerbi_dashboard.png"
   },
   {
     title: "Finance Assistant Multi-Agent",
@@ -40,7 +40,7 @@ const projectsData = [
     category: "ai",
     technologies: ["Python", "yfinance", "Generative AI"],
     github: "https://github.com/ROOSSOp2452",
-    imageUrl: "src/assets/images/finance_assistant.jpg"
+    imageUrl: "/images/finance_assistant.jpg"
   },
   {
     title: "Task Management API",
@@ -48,7 +48,7 @@ const projectsData = [
     category: "web",
     technologies: ["Django REST", "JWT", "API Design"],
     github: "https://github.com/ROOSSOp2452",
-    imageUrl: "src/assets/images/Taks_management.png"
+    imageUrl: "/images/Taks_management.png"
   },
 ];
 

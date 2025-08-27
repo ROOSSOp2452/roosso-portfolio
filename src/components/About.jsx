@@ -15,7 +15,7 @@ const About = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition duration-500"></div>
               <img 
-                src="src/assets/images/roosso.png"
+                src="/images/roosso.png"
                 alt="Roosso P"
                 className="relative w-full max-w-sm mx-auto rounded-full shadow-2xl border-8 border-white"
               />

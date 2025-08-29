@@ -14,7 +14,7 @@ const Hero = ({ scrollToSection }) => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 font-semibold">
-            AI Engineer | Data Scientist | Web Developer
+            AI Engineer | Data Analyst | Web Developer
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
             I build intelligent and beautiful web applications. My passion lies at the intersection of data, AI, and user-centric design.

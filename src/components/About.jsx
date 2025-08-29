@@ -31,7 +31,7 @@ const About = () => {
               <InfoCard 
                 icon={<Briefcase className="w-7 h-7 text-blue-600" />} 
                 title="Experience"
-                text="2+ years of hands-on experience in developing and deploying AI models and web applications."
+                text=" 0.6 years of hands-on experience in Finetuning and deploying AI models and web applications."
               />
               <InfoCard 
                 icon={<Award className="w-7 h-7 text-purple-600" />} 

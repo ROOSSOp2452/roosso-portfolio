@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowDown, Download } from 'lucide-react';
 
 const Hero = ({ scrollToSection }) => {
-  const resumeUrl = "https://drive.google.com/uc?export=download&id=1aF0S7vNqv9EYQZagrxoSavhV4V9c3twD";
+  const resumeUrl = "https://drive.google.com/file/d/1uClghGxbWZACGuDV3pag57m9OhRXVphc/view?usp=sharing";
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6">

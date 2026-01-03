@@ -7,7 +7,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, activeSection, scrollToSection, nav
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg shadow-md">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-gray-800">
-          <a href="#" onClick={() => scrollToSection('about')}>Roosso P.</a>
+          <a href="#" onClick={() => scrollToSection('about')}>Roosso P</a>
         </div>
         <nav className="hidden md:flex space-x-8">
           {navigationItems.map((item) => (

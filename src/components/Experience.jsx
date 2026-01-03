@@ -1,21 +1,48 @@
 import React from 'react';
 import { Briefcase, Calendar, MapPin, CheckCircle } from 'lucide-react';
+import RevealOnScroll from './RevealOnScroll';
 
 const experiences = [
   {
-    title: "Python (Django) Developer Intern",
-    company: "Thaagam Foundation",
+    title: "Python Developer",
+    company: "m7 Corporation",
     period: "Jun 2025 – Present",
-    location: "Remote",
-    description: "Contributed to backend development for internal automation systems, and developed several creative ML models for content generation.",
+    location: "Chennai",
+    description: (
+      <ul className="list-disc pl-5 space-y-2 mt-2 text-left">
+        <li>
+          <strong>Voixo AI:</strong> Contributed to an AI calling platform using LiveKit, SIP Trunk, and Gemini models. Implemented RESTful API endpoints for cross-device calling.
+        </li>
+        <li>
+          <strong>Augmented Reality:</strong> Developed a platform where users generate AR experiences from their own media using Django, MindAR.js, and WebRTC.
+        </li>
+        <li>
+          <strong>Generative Model Finetuning:</strong> Finetuned 'Ace-Step' for Indian/Tamil music generation and 'Wan-2.1' for video generation using LoRA, QLoRA, and ComfyUI.
+        </li>
+      </ul>
+    ),
     color: "blue"
+  },
+  {
+    title: "Freelance",
+    company: "Saint Mary Magdelene Church",
+    period: "Freelance",
+    location: "Remote",
+    description: (
+      <ul className="list-disc pl-5 space-y-2 mt-2 text-left">
+        <li>Created a comprehensive frontend using React.js.</li>
+        <li>Implemented APIs to connect frontend and backend.</li>
+        <li>Used Django for the backend admin dashboard.</li>
+      </ul>
+    ),
+    color: "green"
   },
   {
     title: "Math AI Trainer (Freelance)",
     company: "Outlier AI",
     period: "Sep 2024 – Nov 2024",
     location: "Remote",
-    description: "Enhanced LLM capabilities in mathematical reasoning and quantitative finance through targeted prompt-engineering workflows.",
+    description: "Created problem-solving prompts for AI model training to improve accuracy and logical comprehension of LLMs in mathematical reasoning.",
     color: "purple"
   }
 ];
@@ -24,18 +51,20 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Work Experience</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Work Experience</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-1/2 w-1 bg-gray-200 h-full transform -translate-x-1/2"></div>
-          
-          {experiences.map((exp, index) => (
-            <ExperienceItem key={index} {...exp} isLeft={index % 2 === 0} />
-          ))}
-        </div>
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-1/2 w-1 bg-gray-200 h-full transform -translate-x-1/2"></div>
+            
+            {experiences.map((exp, index) => (
+              <ExperienceItem key={index} {...exp} isLeft={index % 2 === 0} />
+            ))}
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );
@@ -57,6 +86,12 @@ const ExperienceItem = ({ title, company, period, location, description, color, 
       border: 'border-purple-200',
       text: 'text-purple-600',
       dot: 'bg-purple-500'
+    },
+    green: {
+      bg: 'bg-green-500',
+      border: 'border-green-200',
+      text: 'text-green-600',
+      dot: 'bg-green-500'
     }
   };
 
@@ -72,7 +107,7 @@ const ExperienceItem = ({ title, company, period, location, description, color, 
             <div className="flex items-center"><Calendar className="w-4 h-4 mr-2" /> {period}</div>
             <div className="flex items-center"><MapPin className="w-4 h-4 mr-2" /> {location}</div>
           </div>
-          <p className="text-gray-700 leading-relaxed">{description}</p>
+          <div className="text-gray-700 leading-relaxed">{description}</div>
         </div>
       </div>
       <div className={`absolute w-8 h-8 ${theme.dot} rounded-full border-4 border-white shadow-md flex items-center justify-center ${timelineDotAlignment}`}>

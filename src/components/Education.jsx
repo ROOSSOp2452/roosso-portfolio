@@ -1,5 +1,6 @@
 import React from 'react';
 import { GraduationCap, Award, Star } from 'lucide-react';
+import RevealOnScroll from './RevealOnScroll';
 
 const educationData = {
   degree: "B.Tech in AI & Data Science",
@@ -20,15 +21,17 @@ const Education = () => {
   return (
     <section id="education" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Education & Certifications</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Education & Certifications</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <EducationCard />
-          <CertificationsCard />
-        </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <EducationCard />
+            <CertificationsCard />
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

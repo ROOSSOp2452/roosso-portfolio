@@ -46,7 +46,12 @@ header a:hover {
 .education h1,
 .education h2,
 .education h3,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #111827 !important;
   font-weight: 700 !important;
 }
@@ -89,11 +94,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #1f2937 !important;
 }
 
-#about h1, #about h2, #about h3,
-#projects h1, #projects h2, #projects h3,
-#experience h1, #experience h2, #experience h3,
-#skills h1, #skills h2, #skills h3,
-#education h1, #education h2, #education h3 {
+#about h1,
+#about h2,
+#about h3,
+#projects h1,
+#projects h2,
+#projects h3,
+#experience h1,
+#experience h2,
+#experience h3,
+#skills h1,
+#skills h2,
+#skills h3,
+#education h1,
+#education h2,
+#education h3 {
   color: #111827 !important;
   background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
   -webkit-background-clip: text !important;
@@ -126,7 +141,9 @@ a.button:hover,
   background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4) !important;
-}/* src/App.css */
+}
+
+/* src/App.css */
 
 /* ROOT OVERRIDES - Override index.html styles */
 :root {
@@ -139,6 +156,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: #f8fafc !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -153,6 +172,8 @@ body {
   place-items: unset !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
 /* Override any existing dark theme */
@@ -168,7 +189,7 @@ body {
     color: #1f2937 !important;
     background-color: #f8fafc !important;
   }
-  
+
   body {
     color: #1f2937 !important;
     background-color: #f8fafc !important;
@@ -324,6 +345,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -340,6 +362,7 @@ body {
     opacity: 0;
     transform: scale(0.95) translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -356,6 +379,7 @@ body {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -372,6 +396,7 @@ body {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -384,12 +409,29 @@ body {
 }
 
 /* Staggered animation delays */
-.animate-fadeInScale:nth-child(1) { animation-delay: 0.1s; }
-.animate-fadeInScale:nth-child(2) { animation-delay: 0.2s; }
-.animate-fadeInScale:nth-child(3) { animation-delay: 0.3s; }
-.animate-fadeInScale:nth-child(4) { animation-delay: 0.4s; }
-.animate-fadeInScale:nth-child(5) { animation-delay: 0.5s; }
-.animate-fadeInScale:nth-child(6) { animation-delay: 0.6s; }
+.animate-fadeInScale:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.animate-fadeInScale:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animate-fadeInScale:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.animate-fadeInScale:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.animate-fadeInScale:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.animate-fadeInScale:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 /* Container animations */
 @keyframes containerFadeIn {
@@ -397,6 +439,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -408,9 +451,12 @@ body {
 }
 
 @keyframes pulse-professional {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
@@ -530,14 +576,18 @@ body {
 }
 
 .nav-link-professional {
-  color: #1f2937; /* Changed to dark color for better contrast */
-  font-weight: 600; /* Increased font weight */
+  color: #1f2937;
+  /* Changed to dark color for better contrast */
+  font-weight: 600;
+  /* Increased font weight */
   text-decoration: none;
-  padding: 0.75rem 1.25rem; /* Increased padding for better click area */
+  padding: 0.75rem 1.25rem;
+  /* Increased padding for better click area */
   border-radius: 0.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  font-size: 0.95rem; /* Slightly larger font */
+  font-size: 0.95rem;
+  /* Slightly larger font */
 }
 
 .nav-link-professional:hover {
@@ -568,19 +618,22 @@ body {
 
 /* REDUCED SECTION SPACING - Main Fix */
 .section-professional {
-  padding: 2.5rem 0; /* Reduced from 5rem to 2.5rem */
+  padding: 2.5rem 0;
+  /* Reduced from 5rem to 2.5rem */
   position: relative;
 }
 
 /* Compact section for tighter layouts */
 .section-professional-compact {
-  padding: 1.5rem 0; /* Even more compact option */
+  padding: 1.5rem 0;
+  /* Even more compact option */
   position: relative;
 }
 
 /* Minimal section for very tight spacing */
 .section-professional-minimal {
-  padding: 1rem 0; /* Minimal spacing option */
+  padding: 1rem 0;
+  /* Minimal spacing option */
   position: relative;
 }
 
@@ -588,7 +641,8 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
+  margin-bottom: 0.75rem;
+  /* Reduced from 1rem */
   background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -600,7 +654,8 @@ body {
   color: #374151;
   font-size: 1.125rem;
   max-width: 32rem;
-  margin: 0 auto 2rem; /* Reduced from 3rem */
+  margin: 0 auto 2rem;
+  /* Reduced from 3rem */
   line-height: 1.7;
 }
 
@@ -608,14 +663,16 @@ body {
   width: 5rem;
   height: 0.25rem;
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  margin: 0 auto 1.5rem; /* Reduced from 2rem */
+  margin: 0 auto 1.5rem;
+  /* Reduced from 2rem */
   border-radius: 0.125rem;
 }
 
 /* Professional grid layouts with reduced gaps */
 .grid-professional {
   display: grid;
-  gap: 1.5rem; /* Reduced from 2rem */
+  gap: 1.5rem;
+  /* Reduced from 2rem */
 }
 
 @media (min-width: 768px) {
@@ -654,7 +711,8 @@ body {
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem; /* Added controlled margin */
+  margin-bottom: 1rem;
+  /* Added controlled margin */
 }
 
 .heading-professional-lg {
@@ -662,20 +720,23 @@ body {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 0.75rem; /* Added controlled margin */
+  margin-bottom: 0.75rem;
+  /* Added controlled margin */
 }
 
 .heading-professional {
   font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 0.5rem; /* Added controlled margin */
+  margin-bottom: 0.5rem;
+  /* Added controlled margin */
 }
 
 .text-professional {
   color: #4b5563;
   line-height: 1.7;
-  margin-bottom: 1rem; /* Added controlled margin */
+  margin-bottom: 1rem;
+  /* Added controlled margin */
 }
 
 .text-professional-muted {
@@ -717,24 +778,27 @@ body {
 }
 
 /* OPTIMIZED SPACING UTILITIES */
-.space-professional > * + * {
-  margin-top: 1rem; /* Reduced from 1.5rem */
+.space-professional>*+* {
+  margin-top: 1rem;
+  /* Reduced from 1.5rem */
 }
 
-.space-professional-lg > * + * {
-  margin-top: 1.5rem; /* Reduced from 2rem */
+.space-professional-lg>*+* {
+  margin-top: 1.5rem;
+  /* Reduced from 2rem */
 }
 
-.space-professional-xl > * + * {
-  margin-top: 2rem; /* Reduced from 3rem */
+.space-professional-xl>*+* {
+  margin-top: 2rem;
+  /* Reduced from 3rem */
 }
 
 /* New compact spacing options */
-.space-professional-compact > * + * {
+.space-professional-compact>*+* {
   margin-top: 0.75rem;
 }
 
-.space-professional-minimal > * + * {
+.space-professional-minimal>*+* {
   margin-top: 0.5rem;
 }
 
@@ -743,36 +807,40 @@ body {
   .hide-mobile {
     display: none;
   }
-  
+
   .section-professional {
-    padding: 1.5rem 0; /* Reduced mobile padding */
+    padding: 1.5rem 0;
+    /* Reduced mobile padding */
   }
-  
+
   .section-professional-compact {
     padding: 1rem 0;
   }
-  
+
   .section-professional-minimal {
     padding: 0.75rem 0;
   }
-  
+
   .section-title-professional {
     font-size: 2rem;
-    margin-bottom: 0.5rem; /* Reduced mobile margin */
+    margin-bottom: 0.5rem;
+    /* Reduced mobile margin */
   }
-  
+
   .section-subtitle-professional {
-    margin-bottom: 1.5rem; /* Reduced mobile margin */
+    margin-bottom: 1.5rem;
+    /* Reduced mobile margin */
   }
-  
+
   .heading-professional-xl {
     font-size: 2.5rem;
   }
-  
+
   .grid-professional {
-    gap: 1rem; /* Reduced mobile grid gap */
+    gap: 1rem;
+    /* Reduced mobile grid gap */
   }
-  
+
   .grid-professional-compact {
     gap: 0.75rem;
   }
@@ -795,6 +863,7 @@ body {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -839,16 +908,16 @@ body {
     background-color: #1f2937;
     color: #f9fafb;
   }
-  
+
   .auto-dark .professional-card {
     background: rgba(31, 41, 55, 0.8);
     border: 1px solid rgba(75, 85, 99, 0.3);
   }
-  
+
   .auto-dark .text-professional {
     color: #d1d5db;
   }
-  
+
   .auto-dark .text-professional-muted {
     color: #9ca3af;
   }
@@ -868,15 +937,15 @@ body {
   .no-print {
     display: none !important;
   }
-  
+
   .print-break-before {
     page-break-before: always;
   }
-  
+
   .print-break-after {
     page-break-after: always;
   }
-  
+
   * {
     color: #000 !important;
     background: white !important;
@@ -904,17 +973,42 @@ body {
 }
 
 /* Remove bottom margins that create gaps */
-.mb-0 { margin-bottom: 0 !important; }
-.mt-0 { margin-top: 0 !important; }
-.my-0 { margin-top: 0 !important; margin-bottom: 0 !important; }
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 
 /* Flexible spacing controls */
-.py-compact { padding-top: 1rem; padding-bottom: 1rem; }
-.py-minimal { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.py-none { padding-top: 0; padding-bottom: 0; }
+.py-compact {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-minimal {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 /* Remove default browser spacing on common elements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -922,7 +1016,8 @@ p {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }

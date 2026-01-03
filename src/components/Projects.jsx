@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TrendingUp, Users, ShieldAlert, HeartPulse, Globe, Database, Bot, BarChart3, ExternalLink, Github, Filter } from 'lucide-react';
+import RevealOnScroll from './RevealOnScroll';
 
 const projectsData = [
   {
@@ -11,18 +12,18 @@ const projectsData = [
     imageUrl: "/images/stock_market.jpg"
   },
   {
-    title: "Customer Churn Analysis",
-    description: "Predictive model using Random Forest to analyze churn patterns and identify key business drivers.",
+    title: "Diabetes Prediction - Machine Learning",
+    description: "Implemented a KNN classifier for diabetes detection using health metrics. Achieved 76.6% accuracy on test data.",
     category: "ml",
-    technologies: ["Python", "Scikit-learn", "Random Forest"],
-    github: "https://github.com/ROOSSOp2452/CUSTOMER_CHURN_ANALYSIS",
-    imageUrl: "/images/customer_churn.jpg"
+    technologies: ["Python", "Scikit-learn"],
+    github: "https://github.com/ROOSSOp2452/DIABETES_PREDICTION",
+    imageUrl: "/images/dia.webp"
   },
   {
     title: "SRS Blog - AI Content Generator",
-    description: "Django-powered content automation website integrated with ChatGPT API.",
+    description: "Designed a blogging tool to generate AI-driven content using ChatGPT API. Automated content drafting.",
     category: "web",
-    technologies: ["Django", "ChatGPT API", "AI Integration"],
+    technologies: ["React.js", "MongoDB", "OpenAI API"],
     github: "https://github.com/ROOSSOp2452/SRS-BLOG",
     imageUrl: "/images/SRS.png"
   },
@@ -64,31 +65,33 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">My Portfolio</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">My Portfolio</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          </div>
 
-        <div className="flex justify-center flex-wrap gap-4 mb-12">
-          {filters.map(filter => (
-            <button 
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 text-lg font-semibold rounded-full transition-all duration-300 ${
-                activeFilter === filter 
-                ? 'bg-blue-600 text-white shadow-lg' 
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}>
-              {filter.charAt(0).toUpperCase() + filter.slice(1)}
-            </button>
-          ))}
-        </div>
+          <div className="flex justify-center flex-wrap gap-4 mb-12">
+            {filters.map(filter => (
+              <button 
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-2 text-lg font-semibold rounded-full transition-all duration-300 ${
+                  activeFilter === filter 
+                  ? 'bg-blue-600 text-white shadow-lg' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}>
+                {filter.charAt(0).toUpperCase() + filter.slice(1)}
+              </button>
+            ))}
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

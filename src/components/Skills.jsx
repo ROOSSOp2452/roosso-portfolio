@@ -1,30 +1,31 @@
 import React from 'react';
 import { Code, Database, Brain, BarChart3, Globe, Settings, Award, TrendingUp } from 'lucide-react';
+import RevealOnScroll from './RevealOnScroll';
 
 const skillsData = {
   languages: [
     { name: 'Python', level: 90, icon: '🐍' },
     { name: 'SQL', level: 75, icon: '🗄️' },
-    { name: 'JavaScript', level: 65, icon: '🟨' },
-    { name: 'C++', level: 55, icon: '💻' },
+    { name: 'JavaScript (Basics)', level: 60, icon: '🟨' },
+    { name: 'Java (Basics)', level: 50, icon: '☕' },
   ],
   web: [
-    { name: 'HTML/CSS', level: 80, icon: '🎨' },
-    { name: 'React.js', level: 70, icon: '⚛️' },
-    { name: 'Django', level: 75, icon: '🌐' },
-    { name: 'REST APIs', level: 65, icon: '🔗' },
+    { name: 'Django / DRF', level: 85, icon: '🌐' },
+    { name: 'React.js (Basics)', level: 60, icon: '⚛️' },
+    { name: 'MySQL / PostgreSQL', level: 75, icon: '🐬' },
+    { name: 'MongoDB', level: 70, icon: '🍃' },
   ],
   ml_ai: [
-    { name: 'TensorFlow', level: 85, icon: '🧠' },
+    { name: 'TensorFlow', level: 80, icon: '🧠' },
     { name: 'Scikit-learn', level: 85, icon: '🤖' },
-    { name: 'PyTorch', level: 80, icon: '🔥' },
-    { name: 'NumPy/Pandas', level: 95, icon: '📊' },
+    { name: 'LLM Fine-tuning', level: 75, icon: '⚙️' },
+    { name: 'Generative AI', level: 80, icon: '✨' },
   ],
   tools: [
     { name: 'Git & GitHub', level: 85, icon: '🛠️' },
-    { name: 'VS Code', level: 90, icon: '💻' },
-    { name: 'Power BI', level: 88, icon: '📈' },
-    { name: 'Docker', level: 70, icon: '🐳' }
+    { name: 'Postman / APIs', level: 90, icon: '🚀' },
+    { name: 'Docker', level: 70, icon: '🐳' },
+    { name: 'JWT Auth', level: 80, icon: '🔒' }
   ],
 };
 
@@ -32,17 +33,19 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical Proficiency</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+        <RevealOnScroll>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical Proficiency</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <SkillColumn title="Languages" skills={skillsData.languages} icon={<Code className="w-8 h-8 text-blue-500" />} />
-          <SkillColumn title="Web & APIs" skills={skillsData.web} icon={<Globe className="w-8 h-8 text-green-500" />} />
-          <SkillColumn title="ML & AI" skills={skillsData.ml_ai} icon={<Brain className="w-8 h-8 text-purple-500" />} />
-          <SkillColumn title="Tools & BI" skills={skillsData.tools} icon={<Settings className="w-8 h-8 text-orange-500" />} />
-        </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <SkillColumn title="Languages" skills={skillsData.languages} icon={<Code className="w-8 h-8 text-blue-500" />} />
+            <SkillColumn title="Web & APIs" skills={skillsData.web} icon={<Globe className="w-8 h-8 text-green-500" />} />
+            <SkillColumn title="ML & AI" skills={skillsData.ml_ai} icon={<Brain className="w-8 h-8 text-purple-500" />} />
+            <SkillColumn title="Tools & BI" skills={skillsData.tools} icon={<Settings className="w-8 h-8 text-orange-500" />} />
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

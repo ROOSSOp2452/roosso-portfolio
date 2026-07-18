@@ -7,7 +7,7 @@ const contactInfo = {
   phone: "+91 97917 68146",
   linkedin: "https://www.linkedin.com/in/roosso-p-71b759279/",
   github: "https://github.com/ROOSSOp2452",
-  resume: "https://drive.google.com/file/d/1cMv96TnyXX5pU3iL4k1whVsDTpo6TRBs/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1es9yk4yABoUaMBS7DYcZAiIa8pACm50A/view?usp=sharing",
   location: "Chennai, Tamil Nadu, India"
 };
 

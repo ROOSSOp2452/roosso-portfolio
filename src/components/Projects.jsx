@@ -51,6 +51,14 @@ const projectsData = [
     github: "https://github.com/ROOSSOp2452",
     imageUrl: "/images/Taks_management.png"
   },
+  {
+    title: "AnalyView — Django Architecture Visualiser",
+    description: "A Python package that performs AST-based static analysis of Django projects, resolving cross-app imports, detecting model/view/URL/inheritance relationships, and rendering interactive architecture diagrams via a React Flow frontend. Published to PyPI with CLI built using Typer and backend served via FastAPI.",
+    category: "web",
+    technologies: ["Python", "FastAPI", "React Flow", "Typer", "AST", "PyPI"],
+    github: "https://github.com/ROOSSOp2452",
+    imageUrl: "/images/analyview.png"
+  },
 ];
 
 const Projects = () => {

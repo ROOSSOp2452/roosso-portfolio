@@ -5,23 +5,48 @@ import RevealOnScroll from './RevealOnScroll';
 const experiences = [
   {
     title: "Python Developer",
-    company: "m7 Corporation",
+    company: "M7 Corporation",
     period: "Jun 2025 – Present",
     location: "Chennai",
     description: (
-      <ul className="list-disc pl-5 space-y-2 mt-2 text-left">
-        <li>
-          <strong>Voixo AI:</strong> Contributed to an AI calling platform using LiveKit, SIP Trunk, and Gemini models. Implemented RESTful API endpoints for cross-device calling.
-        </li>
-        <li>
-          <strong>Augmented Reality:</strong> Developed a platform where users generate AR experiences from their own media using Django, MindAR.js, and WebRTC.
-        </li>
-        <li>
-          <strong>Generative Model Finetuning:</strong> Finetuned 'Ace-Step' for Indian/Tamil music generation and 'Wan-2.1' for video generation using LoRA, QLoRA, and ComfyUI.
-        </li>
-      </ul>
+      <>
+        <h4 className="font-semibold text-blue-700 mt-1 mb-1">Voixo AI — AI Calling Platform</h4>
+        <ul className="list-disc pl-5 space-y-2 text-left">
+          <li>Owned backend API development for an AI-powered calling platform, handling inbound and outbound call flows end-to-end.</li>
+          <li>Built and deployed real-time voice agents by integrating LiveKit, SIP trunking, Asterisk, and Gemini AI — including diagnosing and resolving a production room-join race condition (SIGTERM within 500 ms of join) and Deepgram STT misconfiguration in live Tamil-language complaint pipelines.</li>
+          <li>Designed API key authentication securing third-party integrations across the platform.</li>
+          <li>Debugged sequential call routing failures including SIP 480 DND issues and misconfigured team-lead flags causing calls to be silently bypassed.</li>
+        </ul>
+        <p className="text-xs text-gray-500 mt-2 font-medium">Python, Django, Django REST Framework, LiveKit, SIP, Asterisk, Gemini AI</p>
+
+        <h4 className="font-semibold text-blue-700 mt-4 mb-1">Augmented Reality Platform</h4>
+        <ul className="list-disc pl-5 space-y-2 text-left">
+          <li>Built backend APIs powering an AR content platform, enabling users to generate AR experiences from their own images and video.</li>
+          <li>Implemented WebRTC-based real-time video streaming for AR playback and automated AR marker generation using MindAR.js.</li>
+        </ul>
+        <p className="text-xs text-gray-500 mt-2 font-medium">Django, MindAR.js, WebRTC, JavaScript</p>
+
+        <h4 className="font-semibold text-blue-700 mt-4 mb-1">Generative AI Fine-Tuning — Ace-Step (Music) & Wan 2.1 (Video)</h4>
+        <ul className="list-disc pl-5 space-y-2 text-left">
+          <li>Fine-tuned the Ace-Step music generation model using LoRA/QLoRA to improve Tamil and Indian regional music generation quality, including pronunciation accuracy and rhythmic fidelity.</li>
+          <li>Fine-tuned the Wan 2.1 video generation and lip-sync model via ComfyUI-based LoRA training, improving lip-sync performance and output video quality across evaluation runs.</li>
+        </ul>
+        <p className="text-xs text-gray-500 mt-2 font-medium">PyTorch, Hugging Face, PEFT, LoRA, QLoRA, ComfyUI</p>
+      </>
     ),
     color: "blue"
+  },
+  {
+    title: "Math AI Trainer",
+    company: "Outlier AI",
+    period: "Sep 2024 – Nov 2024",
+    location: "Remote",
+    description: (
+      <ul className="list-disc pl-5 space-y-2 mt-2 text-left">
+        <li>Created mathematical reasoning prompts for AI model training and evaluated AI responses to improve logical reasoning and problem-solving quality.</li>
+      </ul>
+    ),
+    color: "purple"
   },
   {
     title: "Freelance",
@@ -36,14 +61,6 @@ const experiences = [
       </ul>
     ),
     color: "green"
-  },
-  {
-    title: "Math AI Trainer (Freelance)",
-    company: "Outlier AI",
-    period: "Sep 2024 – Nov 2024",
-    location: "Remote",
-    description: "Created problem-solving prompts for AI model training to improve accuracy and logical comprehension of LLMs in mathematical reasoning.",
-    color: "purple"
   }
 ];
 

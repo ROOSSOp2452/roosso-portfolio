@@ -3,7 +3,7 @@ import { Download } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 
 const Hero = ({ scrollToSection }) => {
-  const resumeUrl = "https://drive.google.com/file/d/1cMv96TnyXX5pU3iL4k1whVsDTpo6TRBs/view?usp=sharing";
+  const resumeUrl = "https://drive.google.com/file/d/1es9yk4yABoUaMBS7DYcZAiIa8pACm50A/view?usp=sharing";
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6">

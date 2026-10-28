@@ -1,77 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useState } from 'react';
+import { ArrowUpRight, Check, ChevronDown, Github, Linkedin, Mail, Menu, Phone, Sparkles, X } from 'lucide-react';
+import './App.css';
 
-const App = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+const resumeUrl = 'https://drive.google.com/file/d/1es9yk4yABoUaMBS7DYcZAiIa8pACm50A/view?usp=sharing';
+const professionalProducts = [
+  { title: 'Voixo AI', type: 'AI calling platform', description: 'Real-time voice agents and resilient call flows for production-grade customer conversations.', tags: ['Django', 'LiveKit', 'SIP', 'Gemini AI'], image: '/images/finance_assistant.jpg', link: 'http://voixoai.m7corporation.com/' },
+  { title: 'ReaLAR', type: 'AR content platform', description: 'Backend APIs and WebRTC streaming infrastructure for image and video-powered AR experiences.', tags: ['Django', 'WebRTC', 'MindAR.js'], image: '/images/SRS.png', link: 'https://realar.m7corporation.tech/' },
+  { title: 'Business Phone', type: 'Business communication', description: 'A professional communication platform developed as part of M7 Corporation’s product portfolio.', tags: ['Professional product', 'Live platform'], image: '/images/customer_churn.jpg', link: 'http://business-phone.m7.digital/' },
+];
+const personalProjects = [
+  { title: 'AnalyView', type: 'Developer tooling', description: 'AST-powered Django architecture visualiser that turns complex app relationships into interactive diagrams.', tags: ['Python', 'FastAPI', 'React Flow', 'AST'], image: '/images/Taks_management.png', link: 'https://github.com/ROOSSOp2452' },
+  { title: 'Stock Market LSTM', type: 'Machine learning', description: 'A forecasting project exploring 3-month stock trends with recurrent neural networks.', tags: ['Python', 'TensorFlow', 'LSTM'], image: '/images/stock_market.jpg', link: 'https://github.com/ROOSSOp2452/Stock_Market_anlaysis_using_LSTM' },
+  { title: 'Diabetes Prediction', type: 'Machine learning', description: 'A KNN classifier for diabetes detection using health metrics, reaching 76.6% test accuracy.', tags: ['Python', 'Scikit-learn', 'KNN'], image: '/images/dia.webp', link: 'https://github.com/ROOSSOp2452/DIABETES_PREDICTION' },
+  { title: 'SRS Blog', type: 'AI content generator', description: 'A blogging tool that uses the ChatGPT API to automate content drafting.', tags: ['React', 'MongoDB', 'OpenAI API'], image: '/images/SRS.png', link: 'https://github.com/ROOSSOp2452/SRS-BLOG' },
+  { title: 'Power BI Sales Dashboard', type: 'Data analytics', description: 'A KPI dashboard visualising sales performance and market trends.', tags: ['Power BI', 'DAX', 'Data modeling'], image: '/images/powerbi_dashboard.png', link: 'https://github.com/ROOSSOp2452/PowerBi_Dashboards' },
+  { title: 'Task Management API', type: 'Backend engineering', description: 'A REST API with role-based access control and JWT authentication.', tags: ['Django REST', 'JWT', 'API design'], image: '/images/Taks_management.png', link: 'https://github.com/ROOSSOp2452' },
+];
+const projects = personalProjects;
+const experience = [
+  { period: 'Jun 2025 — Present', role: 'Python Developer', company: 'M7 Corporation', copy: 'Building backend systems for AI products, real-time voice workflows, AR experiences, and generative media pipelines.', stack: 'Python · Django · DRF · LiveKit · Asterisk · Gemini AI' },
+  { period: 'Sep 2024 — Nov 2024', role: 'Math AI Trainer', company: 'Outlier AI', copy: 'Created mathematical reasoning prompts and evaluated model responses to improve logical accuracy and problem solving.', stack: 'Mathematical reasoning · Prompt evaluation · AI training' },
+  { period: 'Freelance', role: 'Full-stack Developer', company: 'Saint Mary Magdelene Church', copy: 'Delivered a React frontend, connected APIs, and built a Django-powered admin dashboard for content management.', stack: 'React · Django · REST APIs' },
+];
+const skillGroups = [
+  { label: 'Backend', items: ['Python', 'Django', 'Django REST Framework', 'FastAPI', 'REST APIs'] },
+  { label: 'AI & ML', items: ['Generative AI', 'PyTorch', 'TensorFlow', 'Hugging Face', 'LoRA / QLoRA'] },
+  { label: 'Frontend & data', items: ['React', 'JavaScript', 'SQL', 'MySQL', 'MongoDB'] },
+  { label: 'Systems', items: ['LiveKit', 'SIP', 'Asterisk', 'WebRTC', 'Docker', 'Git'] },
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const goTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); setMenuOpen(false); };
+  return <div className="site-shell">
+    <header className="site-header">
+      <a className="brand" href="#top" onClick={() => goTo('top')} aria-label="Roosso P home"><span className="brand-mark">R</span><span>Roosso<span className="brand-dot">.</span></span></a>
+      <nav className={`nav ${menuOpen ? 'is-open' : ''}`}>{[['about', 'About'], ['experience', 'M7 Experience'], ['professional-products', 'Products'], ['work', 'Personal work'], ['contact', 'Contact']].map(([id, label]) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); goTo(id); }}>{label}</a>)}<a className="nav-resume" href={resumeUrl} target="_blank" rel="noreferrer">Resume <ArrowUpRight size={15} /></a></nav>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" aria-expanded={menuOpen}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
+    </header>
+    <main id="top">
+      <section className="hero section-pad"><div className="hero-grid page-width"><div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> Available for backend & AI opportunities</p><h1>I build the systems<br /><em>behind the magic.</em></h1><p className="hero-lede">I’m Roosso, a Python developer and AI engineer focused on turning ambitious ideas into dependable products — from real-time voice agents to developer tools and intelligent media.</p><div className="hero-actions"><button className="button button-dark" onClick={() => goTo('work')}>See selected work <ArrowUpRight size={17} /></button><a className="text-link" href="mailto:roossop24@gmail.com">Let’s talk <ArrowUpRight size={16} /></a></div><div className="hero-proof"><span>Based in Chennai, India</span><span className="proof-line" /><span>Python · AI · APIs</span></div></div><div className="hero-art" aria-label="Portrait of Roosso P"><div className="art-grid" /><div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" /><div className="portrait-wrap"><img src="/images/roosso.png" alt="Roosso P" /></div><div className="floating-card card-top"><span className="mini-icon"><Sparkles size={14} /></span><span><b>AI-native</b><small>Product thinking</small></span></div><div className="floating-card card-bottom"><span className="card-number">0.6+</span><span><b>years</b><small>building with AI</small></span></div></div></div><div className="scroll-cue page-width"><span>Scroll to explore</span><ChevronDown size={17} /></div></section>
+      <section id="work" className="section-pad work-section"><div className="page-width"><div className="section-heading"><div><p className="eyebrow">05 / Personal projects</p><h2>Things I’ve <em>made.</em></h2></div><p className="section-intro">Independent projects from my GitHub, spanning backend engineering, AI, machine learning, and analytics.</p></div><div className="project-grid">{projects.map((project) => <ProjectCard key={project.title} project={project} />)}</div><a className="view-all" href="https://github.com/ROOSSOp2452" target="_blank" rel="noreferrer">View all on GitHub <ArrowUpRight size={17} /></a></div></section>
+      <section id="about" className="section-pad about-section"><div className="page-width about-grid"><div><p className="eyebrow">02 / A little about me</p><h2>Curious by default.<br /><em>Serious about craft.</em></h2></div><div className="about-copy"><p>My work lives at the intersection of strong backend fundamentals and emerging AI. I enjoy the part where a fuzzy idea becomes a clean API, a useful model, or a product that feels obvious to use.</p><p>When I’m not shipping, I’m usually learning a new tool, exploring generative media, or asking how to make the next system a little more resilient.</p><div className="about-signature">Roosso P <span>— developer, builder, learner</span></div></div></div></section>
+      <section className="skills-section section-pad"><div className="page-width"><div className="section-heading compact"><div><p className="eyebrow">03 / What I work with</p><h2>Tools of the trade.</h2></div><p className="section-intro">The stack changes. The aim stays the same: useful, reliable software.</p></div><div className="skills-grid">{skillGroups.map((group) => <div className="skill-group" key={group.label}><h3>{group.label}</h3>{group.items.map((item) => <span key={item}><Check size={15} />{item}</span>)}</div>)}</div></div></section>
+      <section id="experience" className="section-pad experience-section"><div className="page-width"><div className="section-heading"><div><p className="eyebrow">04 / Experience</p><h2>The path so far.</h2></div><p className="section-intro">A timeline of places where I’ve learned, shipped, and solved interesting problems.</p></div><div className="timeline">{experience.map((item) => <article className="timeline-item" key={`${item.company}-${item.role}`}><div className="timeline-date">{item.period}</div><div className="timeline-marker" /><div className="timeline-content"><h3>{item.role}</h3><p className="timeline-company">{item.company}</p><p>{item.copy}</p><span className="timeline-stack">{item.stack}</span></div></article>)}</div></div></section>
+      <section id="contact" className="contact-section section-pad"><div className="page-width contact-inner"><p className="eyebrow">05 / Start a conversation</p><h2>Have a good idea?<br /><em>Let’s make it real.</em></h2><p>I’m open to full-time roles, thoughtful collaborations, and interesting problems.</p><a className="button button-light" href="mailto:roossop24@gmail.com">Get in touch <ArrowUpRight size={17} /></a><div className="contact-details"><a href="mailto:roossop24@gmail.com"><Mail size={16} /> roossop24@gmail.com</a><a href="tel:+919791768146"><Phone size={16} /> +91 97917 68146</a><span>Chennai, Tamil Nadu</span></div></div></section>
+      <section id="professional-products" className="section-pad professional-products"><div className="page-width"><div className="section-heading"><div><p className="eyebrow">05 / M7 Corporation</p><h2>Professional <em>products.</em></h2></div><p className="section-intro">Products I contributed to professionally as a Python Developer — separate from my independent GitHub work.</p></div><div className="project-grid">{professionalProducts.map((project) => <ProjectCard key={project.title} project={project} />)}</div></div></section>
+      <section className="education-section section-pad"><div className="page-width"><div className="section-heading"><div><p className="eyebrow">06 / Education & certifications</p><h2>Still learning.</h2></div><p className="section-intro">A foundation in AI and data science, with continued learning across modern platforms.</p></div><div className="education-grid"><div className="education-card"><span className="education-label">B.Tech · 2020 — 2024</span><h3>Artificial Intelligence<br />& Data Science</h3><p>Sri Muthukumaran Institute of Technology</p><strong>CGPA 8.11 / 10</strong></div><div className="cert-list"><h3>Certifications</h3><span>Data Analytics Job Simulation <small>Deloitte</small></span><span>Microsoft Azure AI Essentials <small>Microsoft</small></span><span>OCI 2025 AI Foundations Associate <small>Oracle</small></span><span>Full Stack Development <small>Infosys Springboard</small></span></div></div></div></section>
+    </main>
+    <footer className="footer page-width"><span>© {new Date().getFullYear()} Roosso P</span><span>Made with intention.</span><div><a href="https://github.com/ROOSSOp2452" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a><a href="https://www.linkedin.com/in/roosso-p-71b759279/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a></div></footer>
+  </div>;
+}
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
-
-  const navigationItems = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
-  return (
-    <div className="bg-gray-50 font-sans">
-      <Header 
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        navigationItems={navigationItems}
-      />
-      <main>
-        <Hero scrollToSection={scrollToSection} />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
+function ProjectCard({ project }) { return <article className={`project-card ${project.featured ? 'featured' : ''}`}><div className="project-image"><img src={project.image} alt="" /><div className="project-type">{project.type}</div></div><div className="project-info"><div><h3>{project.title}</h3><p>{project.description}</p></div><a href={project.link} target="_blank" rel="noreferrer" aria-label={`View ${project.title}`}><ArrowUpRight size={19} /></a><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>; }
 export default App;

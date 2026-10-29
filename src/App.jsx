@@ -9,12 +9,12 @@ const professionalProducts = [
   { title: 'Business Phone', type: 'Business communication', description: 'A professional communication platform developed as part of M7 Corporation’s product portfolio.', tags: ['Professional product', 'Live platform'], visual: 'unified-app', link: 'http://business-phone.m7.digital/' },
 ];
 const personalProjects = [
-  { title: 'AnalyView', type: 'Developer tooling', description: 'AST-powered Django architecture visualiser that turns complex app relationships into interactive diagrams.', tags: ['Python', 'FastAPI', 'React Flow', 'AST'], link: 'https://github.com/ROOSSOp2452' },
-  { title: 'Stock Market LSTM', type: 'Machine learning', description: 'A forecasting project exploring 3-month stock trends with recurrent neural networks.', tags: ['Python', 'TensorFlow', 'LSTM'], link: 'https://github.com/ROOSSOp2452/Stock_Market_anlaysis_using_LSTM' },
-  { title: 'Diabetes Prediction', type: 'Machine learning', description: 'A KNN classifier for diabetes detection using health metrics, reaching 76.6% test accuracy.', tags: ['Python', 'Scikit-learn', 'KNN'], link: 'https://github.com/ROOSSOp2452/DIABETES_PREDICTION' },
-  { title: 'SRS Blog', type: 'AI content generator', description: 'A blogging tool that uses the ChatGPT API to automate content drafting.', tags: ['React', 'MongoDB', 'OpenAI API'], link: 'https://github.com/ROOSSOp2452/SRS-BLOG' },
-  { title: 'Power BI Sales Dashboard', type: 'Data analytics', description: 'A KPI dashboard visualising sales performance and market trends.', tags: ['Power BI', 'DAX', 'Data modeling'], link: 'https://github.com/ROOSSOp2452/PowerBi_Dashboards' },
-  { title: 'Task Management API', type: 'Backend engineering', description: 'A REST API with role-based access control and JWT authentication.', tags: ['Django REST', 'JWT', 'API design'], link: 'https://github.com/ROOSSOp2452' },
+  { title: 'AnalyView', type: 'Developer tooling', description: 'AST-powered Django architecture visualiser that turns complex app relationships into interactive diagrams.', tags: ['Python', 'FastAPI', 'React Flow', 'AST'], image: 'https://images.unsplash.com/photo-1667372335962-5fd503a8ae5b?auto=format&fit=crop&w=1200&q=80', link: 'https://github.com/ROOSSOp2452' },
+  { title: 'Stock Market LSTM', type: 'Machine learning', description: 'A forecasting project exploring 3-month stock trends with recurrent neural networks.', tags: ['Python', 'TensorFlow', 'LSTM'], image: '/images/stock_market.jpg', link: 'https://github.com/ROOSSOp2452/Stock_Market_anlaysis_using_LSTM' },
+  { title: 'Diabetes Prediction', type: 'Machine learning', description: 'A KNN classifier for diabetes detection using health metrics, reaching 76.6% test accuracy.', tags: ['Python', 'Scikit-learn', 'KNN'], image: '/images/dia.webp', link: 'https://github.com/ROOSSOp2452/DIABETES_PREDICTION' },
+  { title: 'SRS Blog', type: 'AI content generator', description: 'A blogging tool that uses the ChatGPT API to automate content drafting.', tags: ['React', 'MongoDB', 'OpenAI API'], image: '/images/SRS.png', link: 'https://github.com/ROOSSOp2452/SRS-BLOG' },
+  { title: 'Power BI Sales Dashboard', type: 'Data analytics', description: 'A KPI dashboard visualising sales performance and market trends.', tags: ['Power BI', 'DAX', 'Data modeling'], image: '/images/powerbi_dashboard.png', link: 'https://github.com/ROOSSOp2452/PowerBi_Dashboards' },
+  { title: 'Task Management API', type: 'Backend engineering', description: 'A REST API with role-based access control and JWT authentication.', tags: ['Django REST', 'JWT', 'API design'], image: '/images/Taks_management.png', link: 'https://github.com/ROOSSOp2452' },
 ];
 const projects = personalProjects;
 const experience = [
